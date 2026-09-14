@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/logoIcon.jpeg" />
+  <meta name="description"
+    content="City Interned — an AI-powered career platform for high finance. Manage spring weeks, summer internships, off-cycle roles and graduate jobs in one place.">
+  <title>City Interned — An AI-Powered Career Platform</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS v4 (stable) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    .material-symbols-outlined {
+      font-family: "Material Symbols Outlined";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+
+  <!-- Tailwind theme configuration only (no custom CSS rules) -->
+  <style type="text/tailwindcss">
+    @theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --color-brand-50:  #eef2ff;
+    --color-brand-100: #e0e7ff;
+    --color-brand-200: #c7d2fe;
+    --color-brand-300: #a5b4fc;
+    --color-brand-500: #6366f1;
+    --color-brand-600: #4f46e5;
+    --color-brand-700: #4338ca;
+
+    --color-accent-50:  #f5f3ff;
+    --color-accent-100: #ede9fe;
+    --color-accent-500: #8b5cf6;
+    --color-accent-600: #7c3aed;
+    --color-accent-700: #6d28d9;
+
+    --color-ink:      #0b1220;
+    --color-ink-soft: #475569;
+    --color-cit-navy: #0b1a3a;
+    --color-cit-blue: #0000cd;
+    --color-cit-pink: #ec3b93;
+    --color-cit-purple: #7c3aed;
+    --color-google-red: #ea4335;
+    --color-google-blue: #4285f4;
+    --color-google-yellow: #fbbc05;
+    --color-google-green: #34a853;
+    --color-career-green: #059669;
+
+    --shadow-card: 0 26px 60px -28px rgb(15 23 42 / .30), 0 2px 8px -3px rgb(15 23 42 / .07);
+    --shadow-soft: 0 10px 30px -18px rgb(15 23 42 / .30);
+    --shadow-cta:  0 16px 34px -14px rgb(79 70 229 / .60);
+  }
+</style>
+</head>
+
+<body class="bg-white font-sans text-ink antialiased selection:bg-brand-100 selection:text-brand-700">
+
+  <!-- ══════════════ HEADER ══════════════ -->
+  <header id="siteHeader"
+    class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md transition-shadow duration-300">
+    <div class="mx-auto w-full max-w-[1440px] px-2 sm:px-6 lg:px-1">
+      <div class="flex h-16 items-center justify-between gap-4 sm:h-20">
+
+        <!-- Logo -->
+        <a href="#top"
+          class="group flex shrink-0 items-center gap-3 rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2">
+          <div class="flex flex-col shrink-0 items-start gap-1.5">
+            <img src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/city-interned-logo-v2.png" alt="City Investment Training logo" class="h-12 w-auto" />
+            <span class="block text-[10px] font-medium text-[#0A1E5A]">A City Investment Training
+              Product</span>
+          </div>
+        </a>
+
+        <div class="hidden xl:flex lg:min-w-0 lg:items-center lg:justify-center lg:gap-2 xl:gap-3">
+          <div class="flex h-[50px] shrink-0 items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-1.5">
+            <div class="flex items-center gap-2">
+              <span class="text-white font-bold text-lg tracking-tight">
+                <img class="h-7 w-auto" src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/glassdoor-logo.png" alt="Glassdoor logo">
+              </span>
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-0.5">
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+              </div>
+              <span class="mt-1 text-text-muted-light font-bold text-[10px]">4.9/5</span>
+            </div>
+          </div>
+          <div class="flex h-[50px] shrink-0 items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-1.5">
+            <div class="flex items-center gap-2">
+              <div class="flex flex-col items-center justify-center gap-1">
+                <svg class="h-3.5 w-3.5 text-google-blue fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                  </path>
+                </svg>
+                <span class="text-[10px] font-bold text-google-blue tracking-tight">Facebook</span>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-0.5">
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+              </div>
+              <span class="mt-1 text-text-muted-light font-bold text-[10px]">4.9/5</span>
+            </div>
+          </div>
+          <div class="flex h-[50px] shrink-0 items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-1.5">
+            <div class="flex items-center gap-2">
+              <div class="flex items-center gap-1">
+                <span class="text-base font-bold tracking-tight">
+                  <span class="text-google-blue">G</span><span class="text-google-red">o</span><span
+                    class="text-google-yellow">o</span><span class="text-google-blue">g</span><span
+                    class="text-google-green">l</span><span class="text-google-red">e</span>
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-0.5">
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+              </div>
+              <span class="mt-1 text-text-muted-light font-bold text-[10px]">4.9/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop menu -->
+        <nav class="hidden items-center lg:flex" aria-label="Main">
+          <a target="_blank" rel="noopener" href="https://program.cityinvestmenttraining.com/"
+            class="rounded-lg px-4 py-2 text-sm font-medium text-[#6d28d9] transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Course</a>
+          <div class="group relative">
+            <button type="button" aria-haspopup="true"
+              class="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-[#6d28d9] transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+              Services
+              <span
+                class="material-icons text-[18px] leading-none transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+            </button>
+            <div
+              class="invisible absolute left-0 top-full z-50 w-80 rounded-xl border border-slate-200 bg-white p-2 opacity-0 shadow-xl transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <a target="_blank" rel="noopener" href="https://appconcierge.cityinvestmentcareers.com/"
+                class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700">Application
+                Concierge - 12 week application support</a>
+              <a target="_blank" rel="noopener" href="https://appconcierge.cityinvestmentcareers.com/"
+                class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700">High
+                Finance Career Coaching</a>
+              <a target="_blank" rel="noopener" href="https://appconcierge.cityinvestmentcareers.com/"
+                class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700">16-Week
+                Part-Time Investment Banking Programme</a>
+            </div>
+          </div>
+          <a target="_blank" rel="noopener" href="https://www.cityinvestmenttraining.com/testimonial"
+            class="rounded-lg px-4 py-2 text-sm font-medium text-[#6d28d9] transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">Testimonials</a>
+          <span aria-disabled="true"
+            class="flex cursor-default items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-[#6d28d9]">
+            Blog
+            <span
+              class="rounded-full bg-accent-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gray-500">Coming
+              soon</span>
+          </span>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="/student/login"
+            class="hidden items-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-5 py-2.5 text-sm font-semibold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 lg:inline-flex">
+            Start Free
+            <span class="material-symbols-outlined text-[18px] leading-none">arrow_right_alt</span>
+          </a>
+
+          <!-- Hamburger -->
+          <button id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"
+            class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-colors duration-200 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 lg:hidden">
+            <span id="menuIconOpen" class="material-symbols-outlined text-[24px] leading-none">menu</span>
+            <span id="menuIconClose" hidden class="material-symbols-outlined text-[24px] leading-none">close</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu"
+      class="max-h-0 overflow-hidden border-t border-transparent opacity-0 transition-all duration-300 ease-out lg:hidden">
+      <nav class="mx-auto w-full max-w-[1440px] space-y-1 px-4 py-4 sm:px-6" aria-label="Mobile">
+        <a target="_blank" rel="noopener" href="https://program.cityinvestmenttraining.com/"
+          class="mobile-link flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium text-[#6d28d9] transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700">Course
+          <span class="material-symbols-outlined text-[18px] text-slate-400 leading-none">arrow_forward</span></a>
+        <div class="px-4 pb-1 pt-2 text-[15px] font-semibold text-[#6d28d9]">Services</div>
+        <div class="ml-4 border-l-2 border-brand-100 pl-2">
+          <a target="_blank" rel="noopener" href="https://appconcierge.cityinvestmentcareers.com/"
+            class="mobile-link block rounded-xl px-4 py-2.5 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700">Application
+            Concierge - 12 week application support</a>
+          <a target="_blank" rel="noopener" href="https://appconcierge.cityinvestmentcareers.com/"
+            class="mobile-link block rounded-xl px-4 py-2.5 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700">High
+            Finance Career Coaching</a>
+          <a target="_blank" rel="noopener" href="https://appconcierge.cityinvestmentcareers.com/"
+            class="mobile-link block rounded-xl px-4 py-2.5 text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700">16-Week
+            Part-Time Investment Banking Programme</a>
+        </div>
+        <a target="_blank" rel="noopener" href="https://www.cityinvestmenttraining.com/testimonial"
+          class="mobile-link flex items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium text-[#6d28d9] transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700">Testimonials
+          <span class="material-symbols-outlined text-[18px] text-slate-400 leading-none">arrow_forward</span></a>
+        <div aria-disabled="true"
+          class="flex cursor-default items-center gap-2 rounded-xl px-4 py-3 text-[15px] font-medium text-[#6d28d9]">
+          Blog
+          <span
+            class="rounded-full bg-accent-50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gray-500">Coming
+            soon</span>
+        </div>
+        <a href="/student/login"
+          class="mobile-link mt-2 flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-5 py-3 text-sm font-semibold text-white shadow-cta">
+          Start Free — Build My Plan
+          <span class="material-symbols-outlined text-[18px] leading-none">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section id="finance" class="relative overflow-hidden scroll-mt-24">
+      <!-- <div aria-hidden="true"
+        class="pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"></div>
+      <div aria-hidden="true"
+        class="pointer-events-none absolute -right-32 top-24 h-[26rem] w-[26rem] rounded-full bg-accent-100/60 blur-3xl">
+      </div> -->
+
+      <div class="relative mx-auto w-full max-w-[1440px] px-2 pt-10 sm:px-6 sm:pt-14 lg:px-1 lg:pt-16">
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] xl:gap-4">
+
+          <!-- ── Left column ── -->
+          <div class="min-w-0">
+            <div
+              class="flex flex-wrap justify-start xl:hidden xl:min-w-0 xl:items-center xl:justify-center gap-2 lg:gap-2 xl:gap-3">
+              <div
+                class="flex h-[50px] shrink-0 items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="text-white font-bold text-lg tracking-tight">
+                    <img class="h-7 w-auto" src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/glassdoor-logo.png" alt="Glassdoor logo">
+                  </span>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <div class="flex items-center gap-0.5">
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                  </div>
+                  <span class="mt-1 text-text-muted-light font-bold text-[10px]">4.9/5</span>
+                </div>
+              </div>
+              <div
+                class="flex h-[50px] shrink-0 items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-1.5">
+                <div class="flex items-center gap-2">
+                  <div class="flex flex-col items-center justify-center gap-1">
+                    <svg class="h-3.5 w-3.5 text-google-blue fill-current" viewBox="0 0 24 24">
+                      <path
+                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                      </path>
+                    </svg>
+                    <span class="text-[10px] font-bold text-google-blue tracking-tight">Facebook</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <div class="flex items-center gap-0.5">
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                  </div>
+                  <span class="mt-1 text-text-muted-light font-bold text-[10px]">4.9/5</span>
+                </div>
+              </div>
+              <div
+                class="flex h-[50px] shrink-0 items-center gap-2 rounded-xl border border-gray-200 bg-white px-2 py-1.5">
+                <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-1">
+                    <span class="text-base font-bold tracking-tight">
+                      <span class="text-google-blue">G</span><span class="text-google-red">o</span><span
+                        class="text-google-yellow">o</span><span class="text-google-blue">g</span><span
+                        class="text-google-green">l</span><span class="text-google-red">e</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <div class="flex items-center gap-0.5">
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                    <span class="material-icons text-[#ffc107]" style="font-size: 10px; line-height: 1;">star</span>
+                  </div>
+                  <span class="mt-1 text-text-muted-light font-bold text-[10px]">4.9/5</span>
+                </div>
+              </div>
+            </div>
+            <span
+              class="mt-5 inline-flex w-fit items-center rounded-full bg-linear-to-r from-cit-pink to-cit-purple px-5 py-2 text-[11px] font-extrabold uppercase tracking-[0.11em] text-white shadow-md shadow-cit-pink/25">
+              Get instant alerts for all internships/jobs when they open
+            </span>
+
+            <h1
+              class="uppercase mt-6 text-[1.7rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-slate-900 sm:text-3xl lg:text-4xl xl:text-5xl">
+              TRACK EVERY FINANCE<br>
+              <span class="bg-gradient-to-r from-blue-600 via-brand-600 to-accent-600 bg-clip-text text-transparent">
+                INTERNSHIP IN ONE PLACE</span>
+            </h1>
+
+            <p class="mt-5 max-w-xl text-[13px] leading-relaxed text-slate-800 sm:mt-6 sm:text-[14px]">
+              City Interned helps students manage spring weeks, summer internships, off-cycle roles and graduate jobs in
+              one place, stay on top of deadlines, and prepare for every stage of the process.
+            </p>
+
+            <p class="mt-4 text-[13px] text-slate-800 max-w-xl mb-2">
+              <span class="material-icons text-career-green pr-1" style="font-size: 16px;">verified</span>
+              Track <span class="font-bold text-accent-700">~200+ internships/jobs </span>than any
+              other tracker.
+            </p>
+            <p class="text-[13px] text-slate-800 max-w-xl mb-2">
+              <span class="material-icons text-career-green pr-1" style="font-size: 16px;">verified</span>
+              Get <span class="font-bold text-accent-700">instant alerts </span>when roles open so you can apply within
+              24-72 hours.
+            </p>
+            <p class="text-[13px] text-slate-800 max-w-xl mb-2">
+              <span class="material-icons text-career-green pr-1" style="font-size: 16px;">verified</span>
+              Boost your chances <span class="font-bold text-accent-700">with CV scoring, bank-specific HireVue tests
+                and AI mock interviews. </span>
+            </p>
+
+            <!-- Tracker callout -->
+            <!-- <div
+              class="max-w-[500px] mt-6 flex items-start gap-3 rounded-2xl border border-accent-100 bg-gradient-to-r from-accent-50 to-brand-50 p-4 shadow-soft sm:mt-7 sm:gap-4 sm:p-5">
+              <span
+                class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white text-accent-600 shadow-sm ring-1 ring-accent-100">
+                <span class="material-symbols-outlined text-[20px] leading-none">track_changes</span>
+              </span>
+              <p class="text-[12px] leading-relaxed text-slate-800 sm:text-[13px]">
+                <span class="font-bold text-accent-700">The most comprehensive UK High Finance Tracker</span>
+                <span class="block sm:inline"> with ~100 more
+                  internships/jobs than any other tracker.</span>
+              </p>
+            </div> -->
+
+            <!-- Feature cards -->
+            <div id="courses"
+              class="mt-7 grid scroll-mt-28 grid-cols-2 gap-2.5 sm:mt-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
+              <article
+                class="reveal group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-2.5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                  <span class="material-symbols-outlined text-[18px] leading-none">work</span>
+                </span>
+                <!-- <p class="mt-3 text-xs font-bold text-brand-600">1.</p> -->
+                <h3 class="mt-3 text-[12px] font-bold leading-snug text-slate-900">Get instant alerts for internships &
+                  jobs</h3>
+                <p class="mt-2 text-[11px] leading-relaxed text-slate-700">Track every internship and graduate job, all
+                  in one place.</p>
+              </article>
+
+              <article
+                class="reveal group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-2.5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                  <span class="material-symbols-outlined text-[18px] leading-none">article</span>
+                </span>
+                <!-- <p class="mt-3 text-xs font-bold text-brand-600">2.</p> -->
+                <h3 class="mt-3 text-[12px] font-bold leading-snug text-slate-900">Take Daily Financial News Q&amp;A
+                </h3>
+                <p class="mt-2 text-[11px] leading-relaxed text-slate-700">Stay updated with the most relevant news
+                  for high finance.</p>
+              </article>
+
+              <article
+                class="reveal group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-2.5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                  <span class="material-symbols-outlined text-[18px] leading-none">task_alt</span>
+                </span>
+                <!-- <p class="mt-3 text-xs font-bold text-brand-600">3.</p> -->
+                <h3 class="mt-3 text-[12px] font-bold leading-snug text-slate-900">CV Scorer</h3>
+                <p class="mt-2 text-[11px] leading-relaxed text-slate-700">Get AI-powered score and feedback based on
+                  top investment bank criteria for your CV.</p>
+              </article>
+
+              <article
+                class="reveal group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-2.5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                  <span class="material-symbols-outlined text-[18px] leading-none">videocam</span>
+                </span>
+                <!-- <p class="mt-3 text-xs font-bold text-brand-600">4.</p> -->
+                <h3 class="mt-3 text-[12px] font-bold leading-snug text-slate-900">Practice Bank-Specific Hirevue
+                  Tests</h3>
+                <p class="mt-2 text-[11px] leading-relaxed text-slate-700">Real bank hirevue tests to help you prepare
+                  and excel.</p>
+              </article>
+
+              <article
+                class="reveal group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-2.5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card">
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                  <span class="material-symbols-outlined text-[18px] leading-none">smart_toy</span>
+                </span>
+                <!-- <p class="mt-3 text-xs font-bold text-brand-600">5.</p> -->
+                <h3 class="mt-3 text-[12px] font-bold leading-snug text-slate-900">Practice AI Mock Interviews (Coming
+                  Soon)</h3>
+                <p class="mt-2 text-[11px] leading-relaxed text-slate-700">AI-powered mock interviews with realistic
+                  feedback.</p>
+              </article>
+            </div>
+
+            <!-- CTAs -->
+            <div class="mt-8 flex w-full">
+              <a href="/student/login"
+                class="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-accent-600 px-7 py-4 text-[15px] font-semibold text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2">
+                Start Free — Build My Plan
+                <span
+                  class="material-symbols-outlined text-[18px] leading-none transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+              </a>
+            </div>
+            <div class="mt-3">
+              <a href="https://cityinterned.com/legal/cityinterned-terms-and-conditions.pdf"
+  target="_blank"
+  rel="noopener noreferrer" class="inline-flex items-center text-xs font-bold text-accent-700">
+                <span class="material-symbols-outlined mr-1 !text-[16px] leading-none">description</span>
+                Terms &amp; Conditions
+              </a>
+            </div>
+          </div>
+
+          <!-- ── Right column : dashboard + practitioners ── -->
+          <div id="tracker" class="min-w-0 scroll-mt-28">
+            <img id="dashboardImg" src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/FTImage2.png"
+              alt="City Interned UK Finance Tracker dashboard showing summer internship listings, application statuses, opening dates and live opportunity counts"
+              height="700" class="block h-auto w-full rounded-2xl">
+
+            <!-- Practitioners -->
+            <div class="mt-6 sm:mt-8">
+
+              <div id="mentors"
+                class="mt-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_10px_30px_rgba(27,32,80,.06)]">
+                <div class="flex items-start gap-3">
+                  <div class="flex items-center gap-2">
+                    <img class="h-8" src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/logoIcon.jpeg"
+                      alt="City Investment Training Mentors" />
+                    <h2 class="font-display text-[15px] font-extrabold leading-tight sm:text-lg text-[#1B2E63]">
+                      Trainers - City Investment Training
+                    </h2>
+                  </div>
+                </div>
+                <div class="mt-4 grid gap-3 md:grid-cols-3">
+                  <article
+                    class="grid min-h-[118px] grid-cols-[104px_minmax(0,1fr)] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card duration-700 ease-out">
+                    <img class="h-full min-h-[110px] w-[104px] rounded-lg object-cover object-center"
+                      src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/sameer.jpeg" alt="Sameer Merchant" />
+                    <div class="flex min-w-0 flex-col px-3 py-2">
+                      <b class="text-[10px]">Sameer Merchant, CFA</b>
+                      <p class="mt-1 text-[9px] font-bold leading-3 text-accent-700">
+                        Ex-Investment Banker / Ex-Goldman Sachs
+                      </p>
+                      <img class="mt-auto h-7 w-[112px] max-w-full object-contain object-left"
+                        style="filter: invert(27%) sepia(89%) saturate(748%) hue-rotate(190deg) brightness(92%) contrast(96%);"
+                        src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/GoldmanSachs-trans.png" alt="Goldman Sachs" />
+                    </div>
+                  </article>
+                  <article
+                    class="grid min-h-[118px] grid-cols-[104px_minmax(0,1fr)] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card duration-700 ease-out">
+                    <img class="h-full min-h-[110px] w-[104px] rounded-lg object-cover object-center"
+                      src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/HareshBalani.png" alt="Haresh Balani" />
+                    <div class="flex min-w-0 flex-col px-3 py-2">
+                      <b class="text-[10px]">Haresh Balani</b>
+                      <p class="mt-1 text-[9px] font-bold leading-3 text-accent-700">
+                        Ex-Hedge Fund Manager, Bessent Capital
+                      </p>
+                      <img class="mt-3 h-9 w-[130px] max-w-full object-contain object-left"
+                        style="filter: invert(27%) sepia(89%) saturate(748%) hue-rotate(190deg) brightness(92%) contrast(96%);"
+                        src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/besant.png" alt="Bessent Capital" />
+                    </div>
+                  </article>
+                  <article
+                    class="grid min-h-[118px] grid-cols-[104px_minmax(0,1fr)] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card duration-700 ease-out">
+                    <img class="h-full min-h-[110px] w-[104px] rounded-lg object-cover object-center"
+                      src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/George.jpeg" alt="George G" />
+                    <div class="flex min-w-0 flex-col px-3 py-2">
+                      <b class="text-[10px]">George G</b>
+                      <p class="mt-1 text-[9px] font-bold leading-3 text-accent-700">
+                        Ex Director, Rothschild
+                      </p>
+                      <img class="mt-auto h-7 w-[90px] max-w-full object-contain object-left"
+                        style="filter: invert(27%) sepia(89%) saturate(748%) hue-rotate(190deg) brightness(92%) contrast(96%);"
+                        src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/Rosthchild.gif" alt="Rothschild" />
+                    </div>
+                  </article>
+                  <article
+                    class="grid min-h-[118px] grid-cols-[104px_minmax(0,1fr)] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card duration-700 ease-out">
+                    <img
+                      class="border border-slate-300 h-full min-h-[110px] w-[104px] rounded-lg object-cover object-center"
+                      src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/Samarth.jpeg" alt="Samarth Chawla" />
+                    <div class="flex min-w-0 flex-col px-3 py-2">
+                      <b class="text-[10px]">Samarth Chawla </b>
+                      <p class="mt-1 text-[9px] font-bold leading-3 text-accent-700">
+                        Ex-PJT Partners
+                      </p>
+                      <img class="mt-auto h-7 w-[112px] max-w-full object-contain object-left"
+                        style="filter: invert(27%) sepia(89%) saturate(748%) hue-rotate(190deg) brightness(92%) contrast(96%);"
+                        src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/PJT.jpeg" alt="PJT" />
+                    </div>
+                  </article>
+                  <article
+                    class="grid min-h-[118px] grid-cols-[104px_minmax(0,1fr)] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card duration-700 ease-out">
+                    <img class="h-full min-h-[110px] w-[104px] rounded-lg object-cover object-center"
+                      src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/Kenneth.jpeg" alt="Dr. Kenneth Lee" />
+                    <div class="flex min-w-0 flex-col px-3 py-2">
+                      <b class="text-[10px]">Dr. Kenneth Lee</b>
+                      <p class="mt-1 text-[9px] font-bold leading-3 text-accent-700">
+                        Ex-MD, Head of European Research, Barclays
+                      </p>
+                      <img class="mt-auto h-9 w-[130px] max-w-full object-contain object-left"
+                        style="filter: invert(27%) sepia(89%) saturate(748%) hue-rotate(190deg) brightness(92%) contrast(96%);"
+                        src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/Barclays-trans.png" alt="Barclays" />
+                    </div>
+                  </article>
+                  <article
+                    class="grid min-h-[118px] grid-cols-[104px_minmax(0,1fr)] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-200 hover:shadow-card duration-700 ease-out">
+                    <img class="h-full min-h-[110px] w-[104px] rounded-lg object-cover object-center"
+                      src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/Argyris.jpg" alt="Argyris Chatzilias" />
+                    <div class="flex min-w-0 flex-col px-3 py-2">
+                      <b class="text-[10px]">Argyris Chatzilias</b>
+                      <p class="mt-1 text-[9px] font-bold leading-3 text-accent-700">
+                        Former head of financial sponsors for Europe, HSBC
+                      </p>
+                      <img class="mt-auto h-7 w-[90px] max-w-full object-contain object-left"
+                        style="filter: invert(27%) sepia(89%) saturate(748%) hue-rotate(190deg) brightness(92%) contrast(96%);"
+                        src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/hsbc-gray.png" alt="HSBC" />
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════ UNIVERSITY SOCIETIES ══════════════ -->
+        <div id="societies"
+          class="mt-10 mb-8 grid scroll-mt-28 grid-cols-1 gap-6 border-t border-slate-200 pt-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,2fr)] lg:gap-8">
+
+          <!-- Trusted by -->
+          <div
+            class="reveal flex items-start gap-4 border-t border-slate-200 pt-8 lg:border-r lg:border-t-0 lg:pr-6 lg:pt-0 xl:pr-8">
+            <span
+              class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white text-accent-600 shadow-soft ring-1 ring-slate-200">
+              <span class="material-symbols-outlined text-[24px] leading-none">verified_user</span>
+            </span>
+            <p class="text-[13.5px] leading-relaxed text-slate-600">
+              <span class="font-bold text-slate-900">This platform is run by Skilled Intern, which is trusted by
+                universities including</span>
+              Oxford, Cambridge University, Imperial College London, UCL and Warwick.
+            </p>
+          </div>
+          <div class="reveal w-full min-w-0">
+            <ul
+              class="grid grid-cols-2 items-center gap-x-2 gap-y-6 sm:grid-cols-3 xl:grid-cols-5 xl:items-center xl:justify-between xl:gap-x-4">
+              <li class="flex min-h-[54px] items-center justify-center px-1 xl:flex-1 xl:px-2">
+                <img src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/University_of_Oxford.svg.webp" alt="University of Oxford"
+                  data-logo="University of Oxford" loading="lazy" decoding="async"
+                  class="h-9 w-full max-w-[150px] object-contain transition-transform duration-300 hover:scale-105 sm:h-10">
+              </li>
+              <li class="flex min-h-[54px] items-center justify-center px-1 xl:flex-1 xl:px-2">
+                <img src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/University_of_Cambridge_logo.png" alt="University of Cambridge"
+                  data-logo="University of Cambridge" loading="lazy" decoding="async"
+                  class="h-9 w-full max-w-[150px] object-contain transition-transform duration-300 hover:scale-105 sm:h-10">
+              </li>
+              <li class="flex min-h-[54px] items-center justify-center px-1 xl:flex-1 xl:px-2">
+                <span
+                  class="w-full text-center text-[14px] font-bold leading-[1.15] tracking-[-0.01em] text-cit-blue sm:text-[15px]">
+                  Imperial College<br>London
+                </span>
+              </li>
+              <li class="flex min-h-[54px] items-center justify-center px-1 xl:flex-1 xl:px-2">
+                <img src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/ucl.png" alt="University College London" data-logo="University College London"
+                  loading="lazy" decoding="async"
+                  class="h-9 w-full max-w-[150px] object-contain transition-transform duration-300 hover:scale-105 sm:h-10">
+              </li>
+              <li class="flex min-h-[54px] items-center justify-center px-1 xl:flex-1 xl:px-2">
+                <img src="https://api.skilledintern.com/api/media/s3/public/cit-ai-assets/finance-tracker/WARWICK.png" alt="University of Warwick" data-logo="University of Warwick"
+                  loading="lazy" decoding="async"
+                  class="h-8 w-full max-w-[150px] object-contain transition-transform duration-300 hover:scale-105 sm:h-9">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- Mobile menu ---------- */
+      var menuBtn = document.getElementById('menuBtn');
+      var menu = document.getElementById('mobileMenu');
+      var iconOpen = document.getElementById('menuIconOpen');
+      var iconClose = document.getElementById('menuIconClose');
+      var isOpen = false;
+
+      function setMenu(open) {
+        isOpen = open;
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        iconOpen.hidden = open;
+        iconClose.hidden = !open;
+        menu.classList.toggle('max-h-0', !open);
+        menu.classList.toggle('opacity-0', !open);
+        menu.classList.toggle('max-h-[40rem]', open);
+        menu.classList.toggle('opacity-100', open);
+        menu.classList.toggle('border-slate-200', open);
+        menu.classList.toggle('border-transparent', !open);
+      }
+
+      menuBtn.addEventListener('click', function () { setMenu(!isOpen); });
+
+      Array.prototype.forEach.call(document.querySelectorAll('.mobile-link'), function (link) {
+        link.addEventListener('click', function () { setMenu(false); });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen) { setMenu(false); menuBtn.focus(); }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false);
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 1024 && isOpen) setMenu(false);
+      });
+
+      /* ---------- Header shadow on scroll ---------- */
+      var header = document.getElementById('siteHeader');
+      function onScroll() {
+        var scrolled = window.scrollY > 8;
+        header.classList.toggle('shadow-md', scrolled);
+        header.classList.toggle('shadow-slate-900/5', scrolled);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ---------- Reveal on scroll ---------- */
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var revealItems = document.querySelectorAll('.reveal');
+
+      if (!reduceMotion) {
+        Array.prototype.forEach.call(revealItems, function (el) {
+          el.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700', 'ease-out');
+        });
+      }
+
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            obs.unobserve(el);
+            var index = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+            window.setTimeout(function () {
+              el.classList.remove('opacity-0', 'translate-y-4');
+            }, index * 90);
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        Array.prototype.forEach.call(revealItems, function (el) { io.observe(el); });
+      } else {
+        Array.prototype.forEach.call(revealItems, function (el) {
+          el.classList.remove('opacity-0', 'translate-y-4');
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
